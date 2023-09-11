@@ -67,7 +67,7 @@ function Signup() {
         },
       };
 
-      const data = await axios.post(url,{name,email,phone,address,password},config);
+      await axios.post(url,{name,email,phone,address,password},config);
 
       toast({
         title:"Registration Successful",

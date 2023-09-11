@@ -133,18 +133,23 @@ const handleSubmit = async () => {
   },[]);
 
 
-    const totalAmount = () => {
-      if (hours === null) {
-        setAmount(0.0);
-      } else {
-        var totalAmount = Number(hours) * Number(price);
-        setAmount(totalAmount);
-      }
-    };
+    // const totalAmount = () => {
+    //   if (hours === null) {
+    //     setAmount(0.0);
+    //   } else {
+    //     var totalAmount = Number(hours) * Number(price);
+    //     setAmount(totalAmount);
+    //   }
+    // };
 
   useEffect(() => {
-    totalAmount();
-  }, [hours]);
+    if (hours === null) {
+      setAmount(0.0);
+    } else {
+      var totalAmount = Number(hours) * Number(price);
+      setAmount(totalAmount);
+    }
+  }, [hours,price]);
 
   const sandbox = true;
   const paypaUrl = sandbox === true ? "https://www.sandbox.paypal.com/cgi-bin/webscr" : "https://www.paypal.com/cgi-bin/webscr";

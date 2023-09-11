@@ -28,7 +28,7 @@ function Reports() {
 
   useEffect(() => {
     fetchReports();
-  }, []);
+  });
 
   return (
     <Box

@@ -38,7 +38,7 @@ function SelectSpot() {
 
   useEffect(() => {
     fetchSlots();
-  }, []);
+  });
 
   var slots = 0;
   if (space) {
@@ -55,7 +55,7 @@ function SelectSpot() {
       },
     };
 
-    const data = await axios.post(
+    await axios.post(
       url,
       {
         user: user._id,

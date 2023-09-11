@@ -8,7 +8,6 @@ import {
   Input,
   Select,
   Text,
-  space,
   useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
@@ -45,7 +44,7 @@ function EditSpace() {
 
   useEffect(() => {
     singleSpace();
-  }, []);
+  });
 
   const handleUpdate = async () => {
     if (!locationId || !spaceName || !slots || !price) {

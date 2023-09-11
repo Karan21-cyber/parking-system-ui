@@ -9,7 +9,7 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
-import { ParkingState } from "../../contextProvider/ParkingProvider";
+// import { ParkingState } from "../../contextProvider/ParkingProvider";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -41,7 +41,7 @@ function EditLocation() {
 
   useEffect(() => {
     singleLocation();
-  }, []);
+  });
 
   const handleUpdate = async () => {
     if (!locationName || !phone || !address) {

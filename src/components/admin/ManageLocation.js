@@ -16,14 +16,14 @@ import React, { useEffect, useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useNavigate } from "react-router-dom";
-import { ParkingState } from "../../contextProvider/ParkingProvider";
+// import { ParkingState } from "../../contextProvider/ParkingProvider";
 import axios from "axios";
 
 function ManageLocation() {
   const [locations, setLocations] = useState([]);
 
   const navigate = useNavigate();
-  const {setSelectedLocation} = ParkingState(); 
+  // const {setSelectedLocation} = ParkingState(); 
   
   const toast = useToast();
 
@@ -35,7 +35,7 @@ function ManageLocation() {
   
   useEffect(() => {
     fetchlocations();
-  },[]);
+  });
 
   const removeLocation = async(id) => {
     const url = `http://localhost:5000/api/location/remove/${id}`;

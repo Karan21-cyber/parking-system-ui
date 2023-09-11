@@ -73,7 +73,7 @@ function Completion() {
 
   useEffect(() => {
     fetchReserve();
-  }, []);
+  });
 
   if(reserve && location && space && success) {
     return (

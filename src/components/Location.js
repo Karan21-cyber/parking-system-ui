@@ -22,7 +22,7 @@ function Location() {
 
     useEffect(() => {
       fetchSpaces();
-    }, []);
+    });
 
 
     const handlebooking = (data, id) => {
