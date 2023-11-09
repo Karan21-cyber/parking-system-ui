@@ -18,7 +18,7 @@ function Completion() {
 
   const fetchReserve = async () => {
     const bookingId = localStorage.getItem("booking");
-    const url = "http://localhost:5000/api/reserve/singlefetch";
+    const url = "https://parking-system-backend-zoqh.onrender.com/api/reserve/singlefetch";
 
     const data = await axios.get(url, {
       params: {
@@ -33,7 +33,7 @@ function Completion() {
       setSpace(data.data.space[0]);
       setSuccess(true);
 
-      const inserturl = "http://localhost:5000/api/payment/addpayment";
+      const inserturl = "https://parking-system-backend-zoqh.onrender.com/api/payment/addpayment";
       const config = {
         headers: {
           "Content-Type": "application/json",

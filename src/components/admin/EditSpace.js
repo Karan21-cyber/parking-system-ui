@@ -29,7 +29,7 @@ function EditSpace() {
     const spaceId = params.id;
 
     const data = await axios.get(
-      `http://localhost:5000/api/space/single/${spaceId}`
+      `https://parking-system-backend-zoqh.onrender.com/api/space/single/${spaceId}`
     );
 
     if (data) {
@@ -58,7 +58,7 @@ function EditSpace() {
       return;
     }
 
-    const url = "http://localhost:5000/api/space/update";
+    const url = "https://parking-system-backend-zoqh.onrender.com/api/space/update";
 
     const data = await axios.put(url, {
       spaceId,

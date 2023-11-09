@@ -28,7 +28,7 @@ function ManageLocation() {
   const toast = useToast();
 
   const fetchlocations = async() => {
-    const url = "http://localhost:5000/api/location/";
+    const url = "https://parking-system-backend-zoqh.onrender.com/api/location/";
     const data = await axios.get(url);
     setLocations(data.data);
   }
@@ -38,7 +38,7 @@ function ManageLocation() {
   });
 
   const removeLocation = async(id) => {
-    const url = `http://localhost:5000/api/location/remove/${id}`;
+    const url = `https://parking-system-backend-zoqh.onrender.com/api/location/remove/${id}`;
     const data = await axios.delete(url);
 
     if(data){

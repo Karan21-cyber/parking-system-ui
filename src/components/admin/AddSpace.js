@@ -24,7 +24,7 @@ function AddSpace() {
   const toast = useToast();
 
   const fetchlocations = async () => {
-    const url = "http://localhost:5000/api/location/";
+    const url = "https://parking-system-backend-zoqh.onrender.com/api/location/";
     const data = await axios.get(url);
     setLocations(data.data);
   };
@@ -45,7 +45,7 @@ function AddSpace() {
       return;
     }
 
-    const url = "http://localhost:5000/api/space/addspace";
+    const url = "https://parking-system-backend-zoqh.onrender.com/api/space/addspace";
     const config = {
       headers: {
         "Content-Type": "application/json",

@@ -19,7 +19,7 @@ function FindParking() {
   }
 
     const fetchlocations = async () => {
-      const url = "http://localhost:5000/api/location/";
+      const url = "https://parking-system-backend-zoqh.onrender.com/api/location/";
       const data = await axios.get(url);
       setLocations(data.data);
     };

@@ -45,7 +45,7 @@ const handleSubmit = async () => {
 
   const bookingId = localStorage.getItem("booking");
 
-  const url = "http://localhost:5000/api/reserve/addreserve";
+  const url = "https://parking-system-backend-zoqh.onrender.com/api/reserve/addreserve";
   const config = {
     headers: {
       "Content-Type": "application/json",
@@ -107,7 +107,7 @@ const handleSubmit = async () => {
      setPrice(spaces.price);
 
     const singledata = await axios.get(
-      "http://localhost:5000/api/booking/singlebooking",
+      "https://parking-system-backend-zoqh.onrender.com/api/booking/singlebooking",
       {
         params:{
           user: users._id,

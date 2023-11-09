@@ -24,7 +24,7 @@ function Spaces() {
   const navigate = useNavigate();
 
   const fetchSpaces = async() => {
-    const url = "http://localhost:5000/api/space/";
+    const url = "https://parking-system-backend-zoqh.onrender.com/api/space/";
     const data = await axios.get(url);
     setSpaces(data.data);
   }
@@ -38,7 +38,7 @@ const handleEdit = (space) => {
 }
 
 const handleRemove = async(id) => {
-  const url = `http://localhost:5000/api/space/remove/${id}`;
+  const url = `https://parking-system-backend-zoqh.onrender.com/api/space/remove/${id}`;
   const data = await axios.delete(url);
 
   if(data){

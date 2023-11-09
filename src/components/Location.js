@@ -15,7 +15,7 @@ function Location() {
 
     const fetchSpaces = async () => {
       const locationId = params.location_id;
-      const url = `http://localhost:5000/api/space/group/${locationId}`;
+      const url = `https://parking-system-backend-zoqh.onrender.com/api/space/group/${locationId}`;
       const data = await axios.get(url);
       setSpaces(data.data);
     };

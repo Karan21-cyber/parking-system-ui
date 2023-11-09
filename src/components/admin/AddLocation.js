@@ -34,7 +34,7 @@ function AddLocation() {
     }
 
     try {
-      const url = "http://localhost:5000/api/location/addlocation";
+      const url = "https://parking-system-backend-zoqh.onrender.com/api/location/addlocation";
 
       const config = {
         headers: {

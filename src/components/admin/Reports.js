@@ -18,7 +18,7 @@ function Reports() {
   const [reports, setReports] = useState([]);
 
   const fetchReports = async () => {
-    const url = "http://localhost:5000/api/payment";
+    const url = "https://parking-system-backend-zoqh.onrender.com/api/payment";
     const data = await axios.get(url);
     setReports(data.data);
   };

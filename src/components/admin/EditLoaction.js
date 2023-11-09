@@ -28,7 +28,7 @@ function EditLocation() {
     const locationId = params.id;
 
     const data = await axios.get(
-      `http://localhost:5000/api/location/single/${locationId}`
+      `https://parking-system-backend-zoqh.onrender.com/api/location/single/${locationId}`
     );
 
     if (data) {
@@ -56,7 +56,7 @@ function EditLocation() {
     }
 
     try {
-      const url = "http://localhost:5000/api/location/update";
+      const url = "https://parking-system-backend-zoqh.onrender.com/api/location/update";
 
       const data = await axios.put(url, {
         locationId,

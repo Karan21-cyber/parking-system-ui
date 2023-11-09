@@ -60,7 +60,7 @@ function Signup() {
    }
 
    try{
-    const url = "http://localhost:5000/api/user/register";
+    const url = "https://parking-system-backend-zoqh.onrender.com/api/user/register";
       const config = {
         headers:{
           "Content-Type" :"application/json",

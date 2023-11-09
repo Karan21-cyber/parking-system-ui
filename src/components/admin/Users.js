@@ -18,7 +18,7 @@ function Users() {
     const [users,setUsers] = useState([]);
 
     const fetchUsers = async () => {
-      const url = "http://localhost:5000/api/user/";
+      const url = "https://parking-system-backend-zoqh.onrender.com/api/user/";
       const data = await axios.get(url);
       setUsers(data.data);
     };

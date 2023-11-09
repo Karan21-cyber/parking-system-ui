@@ -20,7 +20,7 @@ function Reports() {
   const {user} = ParkingState();
 
   const fetchReports = async () => {  
-    const url = `http://localhost:5000/api/payment/report/${user._id}`;
+    const url = `https://parking-system-backend-zoqh.onrender.com/api/payment/report/${user._id}`;
     
     const data = await axios.get(url);
     setReports(data.data);

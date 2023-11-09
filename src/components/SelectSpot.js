@@ -20,12 +20,12 @@ function SelectSpot() {
   const id = params.spot_id;
 
   const fetchSlots = async () => {
-    const url = `http://localhost:5000/api/space/single/${id}`;
+    const url = `https://parking-system-backend-zoqh.onrender.com/api/space/single/${id}`;
     const data = await axios.get(url);
     if (data) {
       setSpace(data.data);
       const result = await axios.get(
-        "http://localhost:5000/api/reserve/groupfetch",
+        "https://parking-system-backend-zoqh.onrender.com/api/reserve/groupfetch",
         {
           params: { location: data.data.location[0]._id, space: data.data._id },
         }
@@ -48,7 +48,7 @@ function SelectSpot() {
   const handleSpot = async (spot) => {
     setSelectedSlot(spot);
 
-    const url = "http://localhost:5000/api/booking/addbooking";
+    const url = "https://parking-system-backend-zoqh.onrender.com/api/booking/addbooking";
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -95,10 +95,10 @@ function SelectSpot() {
 
       if (currentDate >= prev_date) {
         const reserveRemove = await axios.delete(
-          `http://localhost:5000/api/reserve/remove/${reserve_id}`
+          `https://parking-system-backend-zoqh.onrender.com/api/reserve/remove/${reserve_id}`
         );
         const deletebooking = await axios.delete(
-          `http://localhost:5000/api/booking/removebooking/${bookingId}`
+          `https://parking-system-backend-zoqh.onrender.com/api/booking/removebooking/${bookingId}`
         );
         if (reserveRemove && deletebooking) {
           console.log("success");
