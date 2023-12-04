@@ -43,11 +43,11 @@ function Dashboard() {
           Parking System
         </Text>
         <Link to="/">Dashboard</Link>
+        <Link to="/addlocation">Add Locations</Link>
+        <Link to="/addspaces">Add Spaces</Link>
         <Link to="/locations">Manage Locations</Link>
         <Link to="/spaces">Manage Spaces</Link>
         <Link to="/users">Manage Users</Link>
-        <Link to="/addlocation">Add Locations</Link>
-        <Link to="/addspaces">Add Spaces</Link>
         <Link to="/reports">Manage Reports</Link>
         <Text onClick={logout} cursor="pointer">
           Logout

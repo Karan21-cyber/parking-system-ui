@@ -29,8 +29,6 @@ function Navbar() {
     navigate("/");
   };
 
-  console.log("api",api);
-
   return (
     <Box
       display="flex"
