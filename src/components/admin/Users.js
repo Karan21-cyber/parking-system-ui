@@ -12,13 +12,14 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { api } from "../../api";
 
 function Users() {
 
     const [users,setUsers] = useState([]);
 
     const fetchUsers = async () => {
-      const url = "https://parking-system-backend-zoqh.onrender.com/api/user/";
+      const url = `${api}/user/`;
       const data = await axios.get(url);
       setUsers(data.data);
     };

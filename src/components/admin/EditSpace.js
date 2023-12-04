@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { api } from "../../api";
 
 function EditSpace() {
   const [spaceId, setSpaceId] = useState();
@@ -29,7 +30,7 @@ function EditSpace() {
     const spaceId = params.id;
 
     const data = await axios.get(
-      `https://parking-system-backend-zoqh.onrender.com/api/space/single/${spaceId}`
+      `${api}/space/single/${spaceId}`
     );
 
     if (data) {
@@ -58,7 +59,7 @@ function EditSpace() {
       return;
     }
 
-    const url = "https://parking-system-backend-zoqh.onrender.com/api/space/update";
+    const url = `${api}/space/update`;
 
     const data = await axios.put(url, {
       spaceId,

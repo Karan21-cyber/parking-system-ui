@@ -3,6 +3,7 @@ import { Box, Button, Flex, Heading, Text, useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { ParkingState } from "../contextProvider/ParkingProvider";
 import axios from "axios";
+import { api } from "../api";
 
 function Completion() {
   const [reserve, setReserve] = useState();
@@ -18,7 +19,7 @@ function Completion() {
 
   const fetchReserve = async () => {
     const bookingId = localStorage.getItem("booking");
-    const url = "https://parking-system-backend-zoqh.onrender.com/api/reserve/singlefetch";
+    const url = `${api}/reserve/singlefetch`;
 
     const data = await axios.get(url, {
       params: {
@@ -33,7 +34,7 @@ function Completion() {
       setSpace(data.data.space[0]);
       setSuccess(true);
 
-      const inserturl = "https://parking-system-backend-zoqh.onrender.com/api/payment/addpayment";
+      const inserturl = `${api}/payment/addpayment` ;
       const config = {
         headers: {
           "Content-Type": "application/json",

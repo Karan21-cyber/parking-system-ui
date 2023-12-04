@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import { ParkingState } from "../contextProvider/ParkingProvider";
+import { api } from "../api";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -21,11 +22,14 @@ function Navbar() {
 
   const { user, setUser } = ParkingState();
 
+
   const logout = () => {
     localStorage.clear("userInfo");
     setUser();
     navigate("/");
   };
+
+  console.log("api",api);
 
   return (
     <Box

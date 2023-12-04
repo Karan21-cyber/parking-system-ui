@@ -12,6 +12,7 @@ import {
 // import { ParkingState } from "../../contextProvider/ParkingProvider";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { api } from "../../api";
 
 function EditLocation() {
   const [locationId, setLocationId] = useState();
@@ -28,7 +29,7 @@ function EditLocation() {
     const locationId = params.id;
 
     const data = await axios.get(
-      `https://parking-system-backend-zoqh.onrender.com/api/location/single/${locationId}`
+      `${api}/location/single/${locationId}`
     );
 
     if (data) {
@@ -56,7 +57,7 @@ function EditLocation() {
     }
 
     try {
-      const url = "https://parking-system-backend-zoqh.onrender.com/api/location/update";
+      const url = `${api}/location/update`;
 
       const data = await axios.put(url, {
         locationId,

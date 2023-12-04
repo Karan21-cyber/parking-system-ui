@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { api } from "../../api";
 
 function AddSpace() {
   const [locations, setLocations] = useState([]);
@@ -24,7 +25,7 @@ function AddSpace() {
   const toast = useToast();
 
   const fetchlocations = async () => {
-    const url = "https://parking-system-backend-zoqh.onrender.com/api/location/";
+    const url = `${api}/location/`;
     const data = await axios.get(url);
     setLocations(data.data);
   };
@@ -45,7 +46,7 @@ function AddSpace() {
       return;
     }
 
-    const url = "https://parking-system-backend-zoqh.onrender.com/api/space/addspace";
+    const url = `${api}/space/addspace`;
     const config = {
       headers: {
         "Content-Type": "application/json",

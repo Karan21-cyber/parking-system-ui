@@ -14,6 +14,7 @@ import {
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { api } from "../api";
 
 function Login() {
     const [show, setShow] = useState(false);
@@ -41,7 +42,7 @@ function Login() {
     }
 
     try{
-      const url = "https://parking-system-backend-zoqh.onrender.com/api/user/login";
+      const url = `${api}/user/login`;
 
       const config = {
         headers:{

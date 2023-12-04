@@ -14,6 +14,7 @@ import {
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { api } from "../api";
 
 function Signup() {
   const [show, setShow] = useState(false);
@@ -60,7 +61,7 @@ function Signup() {
    }
 
    try{
-    const url = "https://parking-system-backend-zoqh.onrender.com/api/user/register";
+    const url =   `${api}/user/register`;
       const config = {
         headers:{
           "Content-Type" :"application/json",

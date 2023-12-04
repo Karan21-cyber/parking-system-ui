@@ -12,13 +12,14 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { api } from "../../api";
 
 function Reports() {
 
   const [reports, setReports] = useState([]);
 
   const fetchReports = async () => {
-    const url = "https://parking-system-backend-zoqh.onrender.com/api/payment";
+    const url = `${api}/payment`;
     const data = await axios.get(url);
     setReports(data.data);
   };

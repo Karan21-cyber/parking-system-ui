@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { api } from "../../api";
 
 function AddLocation() {
   const [locationName, setLocationsName] = useState();
@@ -34,7 +35,7 @@ function AddLocation() {
     }
 
     try {
-      const url = "https://parking-system-backend-zoqh.onrender.com/api/location/addlocation";
+      const url =  `${api}/location/addlocation`;
 
       const config = {
         headers: {

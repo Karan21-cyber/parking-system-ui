@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import {ParkingState} from "../contextProvider/ParkingProvider"
 import axios from "axios"
+import { api } from '../api';
 
 function Location() {
 
@@ -15,7 +16,7 @@ function Location() {
 
     const fetchSpaces = async () => {
       const locationId = params.location_id;
-      const url = `https://parking-system-backend-zoqh.onrender.com/api/space/group/${locationId}`;
+      const url = `${api}/space/group/${locationId}`;
       const data = await axios.get(url);
       setSpaces(data.data);
     };
@@ -29,12 +30,6 @@ function Location() {
         setSelectedSpace(data);
         navigate(`/selectlocation/${id}`)
     }
-
-
-    
-
-
-
 
   return (
     <Box bg="gray" paddingBlock="1rem" height="90vh" px="10%">

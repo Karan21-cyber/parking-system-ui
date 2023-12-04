@@ -10,6 +10,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { ParkingState } from "../contextProvider/ParkingProvider";
 import axios from "axios";
+import { api } from "../api";
 
 function Booking() {
   const [locationId,setLocationId] = useState();
@@ -45,7 +46,7 @@ const handleSubmit = async () => {
 
   const bookingId = localStorage.getItem("booking");
 
-  const url = "https://parking-system-backend-zoqh.onrender.com/api/reserve/addreserve";
+  const url = `${api}/reserve/addreserve`;
   const config = {
     headers: {
       "Content-Type": "application/json",

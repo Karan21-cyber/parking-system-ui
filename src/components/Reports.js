@@ -13,6 +13,7 @@ import {
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {ParkingState} from "../contextProvider/ParkingProvider";
+import { api } from "../api";
 
 function Reports() {
   const [reports, setReports] = useState([]);
@@ -20,7 +21,7 @@ function Reports() {
   const {user} = ParkingState();
 
   const fetchReports = async () => {  
-    const url = `https://parking-system-backend-zoqh.onrender.com/api/payment/report/${user._id}`;
+    const url = `${api}/payment/report/${user._id}`;
     
     const data = await axios.get(url);
     setReports(data.data);
